@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--
+    WELCOME TO THE STRIVE TEAM GENERATOR!
+
+    In this app you will generate teams and assign the participants to them.
+    You will use the Bootstrap components for the elements of your app.
+
+    The features are the following:
+    - The user should be able to add a list of names, find a way to get the user input and fill a list with the new name.
+    - The user should be able to set the number of teams he wants, so that they will be generated. A team is just another list to be displayed.
+    - An "Assign" button will be required in order to launch the team generation functionality.
+    - Every time the user clicks on the "Assign" button, a random name is placed in a team and removed from the initial list.
+    - Each team should be inside a "column" to be responsive.
+    - [EXTRA] Create a button to remove a user from a team, and putting him back in the main list, waiting to be reassigned.
+    - [EXTRA] Create a button to reset the state of the app.
+-->
+<html lang="en"><head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <title>User Game</title>
+<style>
+    .jumbotron{
+        background-image: url(1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: rgb(169, 32, 69);;
+    }
+</style>
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Gaming Zone</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Top players</a>
+            <a class="nav-link" href="#">Games</a>
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled playes</a>
+          </div>
+        </div>
+      </nav>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Gaming Zone</h1>
+          <hr>
+          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+</div>
+<div class='container'>
+    <div class="row">
+        <div class="col-6">
+
+    <div class= "row"> 
+    
+    <div class=col-6>
+
+        <label class="sr-only" for="inlineFormInput">Name</label>
+            <input  type="text" id="candidate" class="form-control mb-2 " id="inlineFormInput" placeholder="Player Name">
+    </div>
+    <div class="col-6">
+        <h4>Players</h4>
+        <ul id='list'>
+            <li> 
+                Names
+                
+            </li>
+            
+        </ul>
+
+    </div>
+    <div class="row">
+    <div class="col-6">
+        <div >
+            <button onclick="addItem()"  class="btn btn-primary mb-2 buttonClass ">Add Player</button>
+          </div>
+          
+
+    </div>
+    <div class="col-6 ">
+        <div >
+            <button onclick="removeItem()"  class="btn btn-danger mb-2 buttonClass ">Remove Player</button>
+          </div>
+    </div>
+ 
+</div>
+</div>
+    
+    </div>
+
+   <hr>
+   
+
+    <div class="6">
+    <div class="row">
+        <div class=col-6>
+
+            <label class="sr-only" for="inlineFormInput">Team Name</label>
+                <input  type="text" id="team" class="form-control mb-2 " id="inlineFormInput" placeholder="Teams Name">
+        </div>
+    
+    <div class="col-6">
+        <h4>Teams</h4>
+        <ul id='list2'>
+            <li> 
+                Names
+                
+            </li>
+            
+        </ul>
+
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div >
+                <button onclick="addTeam()"  class="btn btn-primary mb-2 buttonClass">Create</button>
+              </div>
+              
+    
+        </div>
+        <div class="col-6 ">
+            <div >
+                <button onclick=""  class="btn btn-warning mb-2 buttonClass">Assign</button>
+              </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+</div>
+
+      
+
+    
+     
+
+
+  
+  
+    <!-- <input type="text" id="candidate" />
+    <button onclick="addItem()" class="buttonClass">
+    Add item</button>
+    <button onclick="removeItem()" class="buttonClass">
+    Remove item</button> -->
+  
+    <script>
+        function addItem() {
+            let a = document.getElementById("list");
+            let candidate = document.getElementById("candidate");
+            let li = document.createElement("li");
+            li.setAttribute('id', candidate.value);
+            li.appendChild(document.createTextNode(candidate.value));
+            a.appendChild(li);
+            //  candidate.value = "";// clear input
+        }
+  
+        // Creating a function to remove item from list
+        function removeItem() {
+  
+            // Declaring a varible to get select element
+            let a = document.getElementById("list");
+            let candidate = document.getElementById("candidate");
+            let item = document.getElementById(candidate.value);
+            a.removeChild(item);
+            
+        }
+
+function addTeam() {
+            let a = document.getElementById("list2");
+            let candidate = document.getElementById("team");
+            let li = document.createElement("li");
+            li.setAttribute('id', team.value);
+            li.appendChild(document.createTextNode(team.value));
+            a.appendChild(li);
+            //  candidate.value = "";// clear input
+        }
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  
+
+</body>
+</html>
+
